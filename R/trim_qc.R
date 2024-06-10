@@ -47,6 +47,6 @@ trim_qc <- function(fastq_files, output_dir, paired = TRUE) {
 }
 
 # Example usage
-fastq_files <- "G:/tets_DATA"
-output_dir <-  "G:/tets_DATA"
-trim_qc(fastq_files, output_dir)
+#fastq_files <- "G:/tets_DATA"
+#output_dir <-  "G:/tets_DATA"
+#trim_qc(fastq_files, output_dir)
