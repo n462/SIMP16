@@ -1,4 +1,2 @@
 exportPattern("^[[:alpha:]]+")
-export(install_dependencies)
-importFrom(BiocManager, install)
-importFrom(remotes, install_github)
+
