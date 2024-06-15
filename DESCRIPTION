@@ -26,7 +26,8 @@ Imports:
   Rmpfr,
   lmerTest,
   Cairo,
-  BiocManager
+  BiocManager,
+  remotes
 biocViews:
   phangorn,
   phyloseq,
