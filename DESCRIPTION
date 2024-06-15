@@ -32,8 +32,8 @@ Suggests:
     RCM,
     ANCOMBC
 Remotes:
-    BiocManager::phangorn,
-    BiocManager::phyloseq,
-    BiocManager::RCM,
-    BiocManager::ANCOMBC
+    bioc::phangorn,
+    bioc::phyloseq,
+    bioc::RCM,
+    bioc::ANCOMBC
 RoxygenNote: 7.3.1

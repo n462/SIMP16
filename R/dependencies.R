@@ -18,7 +18,11 @@ load_required_libraries <- function() {
     }
 }
 
-# Handle Bioconductor packages separately
+#' Load Bioconductor Libraries
+#'
+#' This function loads all the Bioconductor libraries required for this package.
+#'
+#' @export
 load_bioconductor_libraries <- function() {
     bioc_libraries <- c("phangorn", "phyloseq", "RCM", "ANCOMBC")
     if (!requireNamespace("BiocManager", quietly = TRUE)) {
