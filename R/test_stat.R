@@ -1,4 +1,82 @@
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
+install_dependencies <- function() {
+    cran_packages <- c("ape", "dplyr", "ggplot2", "plotly", "tidyr", "vegan",
+                       "ggpubr", "gplots", "lme4", "gt", "DT", "tidyverse",
+                       "knitr", "usethis", "gmp", "nloptr", "Rmpfr",
+                       "lmerTest", "Cairo")
+
+    bioc_packages <- c("phangorn", "phyloseq", "mia", "RCM", "ANCOMBC",
+                       "ShortRead", "dada2", "microbiome", "microbiomeMarker",
+                       "DECIPHER")
+
+    github_packages <- c("EESI/themetagenomics",
+                         "pmartinezarbizu/pairwiseAdonis/pairwiseAdonis")
+
+    # Install CRAN packages
+    install.packages(cran_packages)
+
+    # Install Bioconductor packages
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+    BiocManager::install(bioc_packages, update = TRUE, ask = FALSE)
+
+    # Install GitHub packages
+    if (!requireNamespace("remotes", quietly = TRUE))
+        install.packages("remotes")
+    remotes::install_github(github_packages)
+}
+#' Title
+#'
+#' @param main_factor
+#' @param confounder
+#' @param method
+#' @param perm
+#'
+#' @return
+#' @export
+#'
+#' @examples
 statdiversity<- function(main_factor, confounder, method, perm) {
+    # Ensure necessary packages are installed
+    install_dependencies()
+
+    # Load the necessary libraries
+    library(ape)
+    library(dplyr)
+    library(ggplot2)
+    library(plotly)
+    library(tidyr)
+    library(vegan)
+    library(ggpubr)
+    library(gplots)
+    library(lme4)
+    library(gt)
+    library(DT)
+    library(tidyverse)
+    library(knitr)
+    library(usethis)
+    library(gmp)
+    library(nloptr)
+    library(Rmpfr)
+    library(lmerTest)
+    library(Cairo)
+    library(phangorn)
+    library(phyloseq)
+    library(mia)
+    library(RCM)
+    library(ANCOMBC)
+    library(ShortRead)
+    library(dada2)
+    library(microbiome)
+    library(microbiomeMarker)
+    library(DECIPHER)
+    library(remotes)
+    library(mothur)
     output_dir = getwd()
     # =====================================
     # RCM Analysis

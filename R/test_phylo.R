@@ -1,4 +1,82 @@
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
+install_dependencies <- function() {
+    cran_packages <- c("ape", "dplyr", "ggplot2", "plotly", "tidyr", "vegan",
+                       "ggpubr", "gplots", "lme4", "gt", "DT", "tidyverse",
+                       "knitr", "usethis", "gmp", "nloptr", "Rmpfr",
+                       "lmerTest", "Cairo")
+
+    bioc_packages <- c("phangorn", "phyloseq", "mia", "RCM", "ANCOMBC",
+                       "ShortRead", "dada2", "microbiome", "microbiomeMarker",
+                       "DECIPHER")
+
+    github_packages <- c("EESI/themetagenomics",
+                         "pmartinezarbizu/pairwiseAdonis/pairwiseAdonis")
+
+    # Install CRAN packages
+    install.packages(cran_packages)
+
+    # Install Bioconductor packages
+    if (!requireNamespace("BiocManager", quietly = TRUE))
+        install.packages("BiocManager")
+    BiocManager::install(bioc_packages, update = TRUE, ask = FALSE)
+
+    # Install GitHub packages
+    if (!requireNamespace("remotes", quietly = TRUE))
+        install.packages("remotes")
+    remotes::install_github(github_packages)
+}
+
+#' Title
+#'
+#' @param mapfile
+#' @param colID
+#'
+#' @return
+#' @export
+#'
+#' @examples
 get_phylo <- function(mapfile, colID) {
+    # Ensure necessary packages are installed
+    install_dependencies()
+
+    # Load the necessary libraries
+    library(ape)
+    library(dplyr)
+    library(ggplot2)
+    library(plotly)
+    library(tidyr)
+    library(vegan)
+    library(ggpubr)
+    library(gplots)
+    library(lme4)
+    library(gt)
+    library(DT)
+    library(tidyverse)
+    library(knitr)
+    library(usethis)
+    library(gmp)
+    library(nloptr)
+    library(Rmpfr)
+    library(lmerTest)
+    library(Cairo)
+    library(phangorn)
+    library(phyloseq)
+    library(mia)
+    library(RCM)
+    library(ANCOMBC)
+    library(ShortRead)
+    library(dada2)
+    library(microbiome)
+    library(microbiomeMarker)
+    library(DECIPHER)
+    library(remotes)
+    library(mothur)
+
     # Read the ASV data and sample names
     asv <- read.csv("asv_data.csv")
     group_data <- read.csv("Samples_names.csv", header = TRUE)
@@ -16,7 +94,6 @@ get_phylo <- function(mapfile, colID) {
 
     # Write data frame to CSV with tab-separated values
     write.table(asvshared, file = "ASVshared.shared" , sep = "\t", row.names = FALSE, quote = FALSE)
-
 
     # Read the taxonomy data
     new_data <- read.csv("taxonomy.csv")
@@ -61,13 +138,12 @@ get_phylo <- function(mapfile, colID) {
     )
 
     # Read map file
-    map <- read.csv(mapfile,sep = ",")
+    map <- read.csv(mapfile, sep = ",")
 
-    # transform dataframe into phyloseq class object.
+    # Transform dataframe into phyloseq class object
     map <- sample_data(map)
 
-    # Assign rownames to be Sample ID's
-    # sample id########
+    # Assign rownames to be Sample IDs
     rownames(map) <- map[[colID]]
 
     # Merge mothur data with sample metadata
