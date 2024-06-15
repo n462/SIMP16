@@ -26,9 +26,6 @@ Imports:
     microbiome,
     gt,
     DT,
-    tidyverse,
-    phyloseq,
-    microbiomeMarker,
     knitr
 Suggests:
     themetagenomics,
