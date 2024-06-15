@@ -1,6 +1,37 @@
 #' Install Dependencies
 #'
 #' This function installs all necessary CRAN, Bioconductor, and GitHub packages.
+#' @import ape
+#' @import dplyr
+#' @import ggplot2
+#' @import plotly
+#' @import tidyr
+#' @import vegan
+#' @import ggpubr
+#' @import gplots
+#' @import lme4
+#' @import gt
+#' @import DT
+#' @import tidyverse
+#' @import knitr
+#' @import usethis
+#' @import gmp
+#' @import nloptr
+#' @import Rmpfr
+#' @import lmerTest
+#' @import Cairo
+#' @import phangorn
+#' @import phyloseq
+#' @import mia
+#' @import RCM
+#' @import ANCOMBC
+#' @import ShortRead
+#' @import dada2
+#' @import microbiome
+#' @import microbiomeMarker
+#' @import DECIPHER
+#' @importFrom EESI themetagenomics
+#' @importFrom pmartinezarbizu pairwiseAdonis
 #' @export
 install_dependencies <- function() {
     cran_packages <- c("ape", "dplyr", "ggplot2", "plotly", "tidyr", "vegan",
