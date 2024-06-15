@@ -1,40 +1,43 @@
 Package: SIMP16
 Type: Package
-Title: What the Package Does (Title Case)
+Title: What the Package Does (One Line, Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Your Name [aut, cre]
+Maintainer: Your Name <your.email@example.com>
+Description: What your package does.
 License: GPL-3
-Encoding: UTF-8
-LazyData: true
-Depends:
-    R (>= 4.0.0),
-    phyloseq (>= 1.32.0),
-    dada2 (>= 1.33.0),
-    ggplot2 (>= 3.3.0),
-    dplyr (>= 1.0.0)
 Imports:
-    ape (>= 5.0),
-    tidyr (>= 1.0.0),
-    vegan (>= 2.5),
-    mia (>= 1.0),
-    RCM (>= 1.0),
-    ANCOMBC (>= 1.0),
-    ShortRead (>= 1.32.0),
-    ggpubr (>= 0.4.0),
-    gplots (>= 3.1.0),
-    lme4 (>= 1.1),
-    pairwiseAdonis (>= 0.4),
-    microbiome (>= 1.0),
-    gt (>= 0.2),
-    DT (>= 0.15),
-    tidyverse (>= 1.3.0),
-    knitr (>= 1.30)
-Suggests:
-    BiocStyle,
-    rmarkdown
-LinkingTo:
-    Rcpp,
-    RcppParallel
+  ape,
+  dplyr,
+  ggplot2,
+  plotly,
+  tidyr,
+  vegan,
+  ggpubr,
+  gplots,
+  lme4,
+  gt,
+  DT,
+  tidyverse,
+  knitr,
+  usethis,
+  gmp,
+  nloptr,
+  Rmpfr,
+  lmerTest,
+  Cairo,
+  BiocManager
+biocViews:
+  phangorn,
+  phyloseq,
+  mia,
+  RCM,
+  ANCOMBC,
+  ShortRead,
+  dada2,
+  microbiome,
+  microbiomeMarker,
+  DECIPHER
+Remotes:
+  EESI/themetagenomics,
+  pmartinezarbizu/pairwiseAdonis/pairwiseAdonis
