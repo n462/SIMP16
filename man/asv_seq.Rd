@@ -2,13 +2,35 @@
 % Please edit documentation in R/test_ASV.R
 \name{asv_seq}
 \alias{asv_seq}
-\title{Title}
+\title{ASV Processing and Taxonomy Assignment}
 \usage{
 asv_seq(fastq_files, output_dir, paired, silva, env, trunc)
 }
 \arguments{
-\item{trunc}{}
+\item{fastq_files}{A string specifying the input directory containing the 16S rRNA .fastq files.}
+
+\item{output_dir}{A string specifying the output directory where the results will be saved.}
+
+\item{paired}{A logical value indicating whether the reads are paired-end (TRUE) or single-end (FALSE).}
+
+\item{silva}{A string specifying the directory containing the silva.gz file used for assigning taxonomy.}
+
+\item{env}{A logical value indicating the operating system environment: Linux (TRUE), Windows (FALSE).}
+
+\item{trunc}{A numeric vector specifying the trimming positions for the forward and reverse reads. If NULL, trimming positions will be automatically detected by default.}
+}
+\value{
+ASV and Taxonomy tables in the current directory
 }
 \description{
-Title
+This function processes 16S rRNA sequences from .fastq files, performs ASV inference using DADA2, filters and trims reads,
+removes chimeras, assigns taxonomy using the SILVA database, and saves the ASV table and taxonomy assignments.
+}
+\examples{
+\dontrun{
+# Example usage:
+asv_seq(fastq_files = "/path/to/.fastq", output_dir = "/path/to/output", paired=TRUE,
+        silva="/path/to/silva.gz", env=TRUE, trunc = NULL)
+}
+
 }
